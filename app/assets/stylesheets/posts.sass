@@ -2,12 +2,8 @@ $green: #4caf50
 $red: #f44336
 
 .text-area-with-counter
-  small
-    &.color-green
-      color: $green
-
-    &.color-red
-      color: $red
+  .field
+    margin: 0
 
   textarea
     &.color-green
@@ -17,3 +13,10 @@ $red: #f44336
     &.color-red
       border-color: $red
       background-color: lighten($red, 40%)
+
+  small
+    &.color-green
+      color: $green
+
+    &.color-red
+      color: $red
