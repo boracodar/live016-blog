@@ -4,15 +4,23 @@ import ReactDOM from 'react-dom';
 class TextAreaWithCounter extends React.Component {
   state = {
     content: this.props.content,
-    statusColor: 'green',
   }
+
+  statusColor = (currentContentLength) =>
+    (this.props.limit - currentContentLength) >= 5 ? 'green' : 'red'
 
   handleContentChange = (e) => {
     const content = e.target.value.slice(0, this.props.limit);
 
     this.setState({
       content,
-      statusColor: (this.props.limit - content.length) >= 5 ? 'green' : 'red'
+      statusColor: this.statusColor(content.length)
+    });
+  }
+
+  componentDidMount() {
+    this.setState({
+      statusColor: this.statusColor(this.state.content.length)
     });
   }
 
