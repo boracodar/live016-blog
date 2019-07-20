@@ -1,14 +1,19 @@
+$green: #4caf50
+$red: #f44336
+
 .text-area-with-counter
   small
     &.color-green
-      color: #4caf50
+      color: $green
 
     &.color-red
-      color: #f44336
+      color: $red
 
   textarea
     &.color-green
-      background-color: lighten(#4caf50, 40%)
+      border-color: $green
+      background-color: lighten($green, 48%)
 
     &.color-red
-      background-color: lighten(#f44336, 20%)
+      border-color: $red
+      background-color: lighten($red, 40%)
